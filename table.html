@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <h1>Table</h1>
-
+<head>
 <style>
     table, th, td {
+      border-collapse: collapse;
       border:1px solid black;
       border-collapse: collapse;
       text-align: center;
       height: 50px;
+      padding: 0px;
     }
     .h3{
         height: 60px;
@@ -19,6 +21,7 @@
     }
     
     </style>
+    </head>
 
     <body>
 
@@ -30,7 +33,7 @@
                 <td>2</td>
             </tr>
             <tr>
-                <table width="100% " class="h3">
+                <table width="100% " style="height: 100px;" class="h3">
                     <tr>
                         <td width="100%">3</td>
                     </tr>
@@ -52,7 +55,7 @@
                                 <tr height="120px">
                                     <td>5</td>
                                 </tr>
-                                <tr height="80px">
+                                <tr height="81px">
                                     <td>8</td>
                                 </tr>
                             </table>
@@ -60,7 +63,7 @@
                         <td>6</td>
                         <td width="25%">
                             <table width="100%">
-                                <tr height="147px">
+                                <tr height="150px">
                                     <td>7</td>
                                 </tr>
                                 <tr height="30px">
