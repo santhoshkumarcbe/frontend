@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .main-container {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .animated {
+      animation: slideInUp 1s ease-out forwards;
+    }
+
+    @keyframes slideInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <h1 class="welcome-text animated" id="welcomeMessage">Welcome, <span id="userName">User</span>!</h1>
+
+    <table class="animated">
+      <tr>
+        <th>Info</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Wallet Balance:</td>
+        <td>$<span id="balanceAmount">0</span></td>
+      </tr>
+      <tr>
+        <td>Available Booking Slot:</td>
+        <td><span id="slotStatus">Available</span></td>
+      </tr>
+      <tr>
+        <td>User Slot:</td>
+        <td><span id="slotNumber">1</span></td>
+      </tr>
+      <tr>
+        <td>User Vehicle Type:</td>
+        <td><span id="type">Electric</span></td>
+      </tr>
+      <tr>
+        <td>Battery Percentage:</td>
+        <td><span id="percentage">80%</span></td>
+      </tr>
+      <tr>
+        <td>Distance to Charging Station:</td>
+        <td><span id="distanceValue">5 miles</span></td>
+      </tr>
+      <tr>
+        <td>Estimated Charging Time:</td>
+        <td><span id="timeValue">1 hour</span></td>
+      </tr>
+    </table>
+
+    <button class="top-up-wallet animated" onclick="topUpWallet()">Top Up Wallet</button>
+    <button class="book-slot animated" onclick="bookChargingSlot()">Book Slot</button>
+  </div>
+
+  <script>
+    // Sample data, you can replace these values with real-time data
+    const userName = "John Doe";
+    const balanceAmount = 50;
+    const slotStatus = "Available";
+    const slotNumber = 1;
+    const vehicleType = "Electric";
+    const batteryPercentage = 80;
+    const distanceValue = "5 miles";
+    const timeValue = "1 hour";
+
+    const userNameElement = document.getElementById("userName");
+    const balanceAmountElement = document.getElementById("balanceAmount");
+    const slotStatusElement = document.getElementById("slotStatus");
+    const slotNumberElement = document.getElementById("slotNumber");
+    const typeElement = document.getElementById("type");
+    const percentageElement = document.getElementById("percentage");
+    const distanceValueElement = document.getElementById("distanceValue");
+    const timeValueElement = document.getElementById("timeValue");
+
+    userNameElement.textContent = userName;
+    balanceAmountElement.textContent = balanceAmount;
+    slotStatusElement.textContent = slotStatus;
+    slotNumberElement.textContent = slotNumber;
+    typeElement.textContent = vehicleType;
+    percentageElement.textContent = batteryPercentage + "%";
+    distanceValueElement.textContent = distanceValue;
+    timeValueElement.textContent = timeValue;
+
+    function topUpWallet() {
+      // Implement top-up wallet functionality
+      alert("Wallet topped up!");
+    }
+
+    function bookChargingSlot() {
+      // Implement book charging slot functionality
+      alert("Slot booked!");
+    }
+
+    // Add animation class after content is set
+    document.querySelectorAll(".animated").forEach(element => {
+      element.classList.add("animated");
+    });
+  </script>
+</body>
+
+</html>
