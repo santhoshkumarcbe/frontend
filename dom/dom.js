@@ -12,7 +12,7 @@ function randomString(lenString) {
         let rnum = Math.floor(Math.random() * characters.length);
         res += characters.substring(rnum, rnum + 1);
     }
-
+    
     return res; 
 }
 
