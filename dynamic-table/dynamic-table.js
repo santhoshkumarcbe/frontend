@@ -86,19 +86,24 @@ function sortTableByColumn(columnIndex) {
     while (switching) {
         switching = false;
         rows = tableEl.rows
+
         for (i = 1; i < (rows.length - 1); i++) {
             shouldSwitch = false;
             x = rows[i].getElementsByTagName("TD")[columnIndex];
             y = rows[i + 1].getElementsByTagName("TD")[columnIndex];
+
             if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                 shouldSwitch = true;
                 break;
             }
+
         }
+
         if (shouldSwitch) {
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             switching = true;
         }
+
     }
 }
 
@@ -112,9 +117,11 @@ function filterData() {
 
     else {
         const filteredData = employeeData.filter((obj) => {
+
             if (obj[selectedOption].includes(value)) {
                 return true;
             }
+            
             return false;
         });
 
@@ -127,9 +134,11 @@ function renderData(number, renderingData, tagEl) {
     tableEl.innerHTML = '';
     tableRowEl.innerHTML = ''
     columns.forEach((column, index) => {
+
         const tableHeadEl = document.createElement('th');
         tableHeadEl.innerText = column;
         tableRowEl.appendChild(tableHeadEl);
+
     })
     tableEl.appendChild(tableRowEl);
 
@@ -175,6 +184,7 @@ function renderData(number, renderingData, tagEl) {
 function pagination(renderingData) {
     paginationDivEl.innerHTML = ''
     const pages = Math.ceil(renderingData.length / itemsPerPage);
+
     for (let index = 0; index < pages; index++) {
         pageButton = document.createElement('button');
         pageButton.textContent = index + 1;
@@ -184,6 +194,7 @@ function pagination(renderingData) {
             renderData(index + 1, renderingData, paginationDivEl);
         })
     }
+
     renderData(1, renderingData, paginationDivEl);
 
 }
