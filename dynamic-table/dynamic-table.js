@@ -73,7 +73,7 @@ sortEl.addEventListener('click', () => {
     sortTableByColumn(sortEl.value);
 })
 
-function sortData(){
+function sortData() {
     sortTableByColumn(sortEl.value);
 }
 

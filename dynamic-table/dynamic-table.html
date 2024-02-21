@@ -1,98 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="dynamic-table.css">
   <title>Dynamic Table</title>
- 
+
 </head>
+
 <body>
-    <div id="root"></div>
-
-    <script src="dynamic-table.js">
-    </script>
-
- <!-- <div id="table-container">
-    <table id="data-table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        Table rows will be dynamically generated here
-      </tbody>
-    </table>
-    <div id="pagination"></div>
-  </div> -->
-
-  <!-- <script>
-    const data = [
-      { id: 1, name: 'John Doe', email: 'john@example.com' },
-      { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-      { id: 3, name: 'Bob Johnson', email: 'bob@example.com' },
-      // Add more data as needed
-    ];
-
-    const itemsPerPage = 2;
-    let currentPage = 1;
-
-    function renderTable() {
-      const tableBody = document.querySelector('#data-table tbody');
-      tableBody.innerHTML = '';
-
-      const startIndex = (currentPage - 1) * itemsPerPage;
-      const endIndex = startIndex + itemsPerPage;
-      const paginatedData = data.slice(startIndex, endIndex);
-
-      paginatedData.forEach(rowData => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td>${rowData.id}</td>
-          <td>${rowData.name}</td>
-          <td>${rowData.email}</td>
-          <td>
-            <button onclick="editRow(${rowData.id})">Edit</button>
-            <button onclick="deleteRow(${rowData.id})">Delete</button>
-          </td>
-        `;
-        tableBody.appendChild(row);
-      });
-
-      renderPagination();
-    }
-
-    function renderPagination() {
-      const totalPages = Math.ceil(data.length / itemsPerPage);
-      const paginationContainer = document.querySelector('#pagination');
-      paginationContainer.innerHTML = '';
-
-      for (let i = 1; i <= totalPages; i++) {
-        const button = document.createElement('button');
-        button.textContent = i;
-        button.onclick = () => {
-          currentPage = i;
-          renderTable();
-        };
-        paginationContainer.appendChild(button);
-      }
-    }
-
-    function editRow(id) {
-      // You can implement inline editing logic here
-      console.log('Editing row with ID:', id);
-    }
-
-    function deleteRow(id) {
-      // You can implement row deletion logic here
-      console.log('Deleting row with ID:', id);
-    }
-
-    renderTable();
-  </script> -->
+  <div id="root"></div>
+  <script src="dynamic-table.js">
+  </script>
 </body>
+
 </html>
