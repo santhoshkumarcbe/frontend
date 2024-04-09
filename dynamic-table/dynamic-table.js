@@ -129,7 +129,6 @@ function filterData() {
     }
 }
 
-
 function renderData(number, renderingData, tagEl) {
     tableEl.innerHTML = '';
     tableRowEl.innerHTML = ''
